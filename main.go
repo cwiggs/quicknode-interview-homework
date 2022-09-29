@@ -8,14 +8,14 @@ import (
 )
 
 type data struct {
-    ID   string `json:"id"`
+	ID   string `json:"id"`
 	Hash string `json:"hash"`
 }
 
 func PodcastHandler(w http.ResponseWriter, r *http.Request) {
-    loadedData := []data{
-        {ID: "1", Hash: "329d4feb-c5c0-4de5-b10c-701b44fbec4f"},
-    }
+	loadedData := []data{
+		{ID: "1", Hash: "329d4feb-c5c0-4de5-b10c-701b44fbec4f"},
+	}
 
 	json.NewEncoder(w).Encode(loadedData)
 }
