@@ -12,7 +12,7 @@ type data struct {
 	Hash string `json:"hash"`
 }
 
-func PodcastHandler(w http.ResponseWriter, r *http.Request) {
+func DataHandler(w http.ResponseWriter, r *http.Request) {
 	loadedData := []data{
 		{ID: "1", Hash: "329d4feb-c5c0-4de5-b10c-701b44fbec4f"},
 	}
@@ -21,7 +21,7 @@ func PodcastHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/test", PodcastHandler)
+	http.HandleFunc("/test", DataHandler)
 	fmt.Println("Starting http server")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
