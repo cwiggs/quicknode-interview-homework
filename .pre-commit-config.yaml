@@ -9,5 +9,5 @@ repos:
     hooks:
       - id: go-fmt
       - id: go-mod-tidy
-      - id: go-unit-tests
+        #- id: go-unit-tests
 

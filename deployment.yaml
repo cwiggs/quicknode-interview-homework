@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quicknode-interview-homework-deployment
+  labels:
+    app: quicknode-interview-homework
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quicknode-interview-homework
+  template:
+    metadata:
+      labels:
+        app: quicknode-interview-homework
+    spec:
+      containers:
+      - name: quicknode-interview-homework
+        image: app
+        ports:
+        - containerPort: 8080
