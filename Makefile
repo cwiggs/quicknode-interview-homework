@@ -8,7 +8,7 @@ docker/build:
 docker/run:
 	docker run -it --rm -p 8080:8080 quicknode-interview-homework
 
-## Uses podman to deploy the deployment.yaml.
+## Uses podman to build/deploy the deployment.yaml.
 .PHONY: podman/deploy
 podman/deploy:
 	podman play kube ./deployment.yaml
