@@ -1,0 +1,18 @@
+[Unit]
+Description=Podman quicknode-interview-homework.service
+
+[Service]
+Restart=on-failure
+RestartSec=30
+Type=simple
+RemainAfterExit=yes
+TimeoutStartSec=30
+
+ExecStart=/usr/bin/podman play kube \
+  /root/quicknode-interview-homework/deployment.yaml
+
+ExecStop=/usr/bin/podman play kube --down \
+  /root/quicknode-interview-homework/deployment.yaml
+
+[Install]
+WantedBy=default.target
